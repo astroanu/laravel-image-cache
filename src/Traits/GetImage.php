@@ -4,7 +4,7 @@ use Config;
 
 trait GetImage {
 
-    public function getImage($folder = 'content') 
+    public function getImage() 
     {
     	$width = Config::get('imagecache.defaults.thumbwidth');
     	$height = Config::get('imagecache.defaults.thumbheight');
@@ -23,7 +23,7 @@ trait GetImage {
         $file = pathinfo($this->image, PATHINFO_FILENAME );
 		$ext = pathinfo($this->image, PATHINFO_EXTENSION);
 
-		return '/' . Config::get('imagecache.defaults.imagepath') . '/' . $folder . '/' 
+		return '/' . Config::get('imagecache.defaults.imagepath') . '/' . $this->imagesdir . '/' 
                 . $file . '-' . $width . '-' . $height . '.' . $ext;
     }
 }
