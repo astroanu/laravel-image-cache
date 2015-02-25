@@ -12,7 +12,7 @@ class Uploader {
 		$extention = $file->getClientOriginalExtension(); 
 		$fileName = $fileName . '.' . $extention;
 
-		$destDir = Config::get('paths.input') . '/'. $imagesdir;
+		$destDir = Config::get('imagecache.paths.input') . '/'. $imagesdir;
 
 		if (!File::isDirectory($destDir)) {
             File::makeDirectory($destDir);
