@@ -16,7 +16,7 @@
     },
     "require": {
         "laravel/framework": "5.0.*",
-        "orchestra/imagine": "~3.0",
+        "orchestra/imagine": "~3.0"
     },
     "minimum-stability": "dev"
 }
