@@ -1,11 +1,11 @@
 ## Laravel ImageCache
 ### Install
-Add this to your composer and update
+Add this to your composer and run ```composer update```
 
     "astroanu/laravel-image-cache": "dev-master"
 
 ### Loading Provider
-Add this to config/app.php
+Add this to ````config/app.php````
 
    	'providers' => [
    	   	   	 ...
@@ -13,7 +13,7 @@ Add this to config/app.php
    	    ];
 
 ### The config file
-Run artisan vendor:publish to copy the config file.
+Run ````artisan vendor:publish```` to copy the config file.
 
     php artisan vendor:publish
  
@@ -40,10 +40,10 @@ The following image urls/routes are available:
     /{route}/{folder}/{image id}-{width}-{height}.{extention} // resized and cropped
     
 ### Using Traits
-You may use the Trait \Astroanu\ImageCache\Traits\GetImage in side your model. Simply put:
+You may use the Trait ````\Astroanu\ImageCache\Traits\GetImage```` inside your model. Simply put:
 
     class Users extends Model {
-        // this is required. this is we look for the file. see uploading.
+        // this is required. this is where we look for the image file. see uploading.
         protected $imagesdir = 'avatars';  
         use \Astroanu\ImageCache\Traits\GetImage;
     }
@@ -60,7 +60,7 @@ getImage() supports the followign parameters:
 
 ### Uploading images
 
-To upload images use Astroanu\ImageCache\Uploader;
+To upload images use ````Astroanu\ImageCache\Uploader````;
 
     use Astroanu\ImageCache\Uploader;
     
