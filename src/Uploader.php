@@ -12,8 +12,14 @@ class Uploader {
 		$extention = $file->getClientOriginalExtension(); 
 		$fileName = $fileName . '.' . $extention;
 
-		$image = $file ->move(Config::get('assets.paths.input') . '/'. $imagesdir, $fileName);
+		$destDir = Config::get('paths.input') . '/'. $imagesdir;
 
-		return $fileName;
+		if (!File::isDirectory($destDir)) {
+            File::makeDirectory($destDir);
+        }
+
+		$image = $file->move($destDir, $fileName);
+
+		return $image;
 	}
 }
