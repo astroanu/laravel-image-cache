@@ -20,6 +20,6 @@ class Uploader {
 
 		$image = $file->move($destDir, $fileName);
 
-		return $image;
+		return $fileName;
 	}
 }
