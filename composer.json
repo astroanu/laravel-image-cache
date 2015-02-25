@@ -10,8 +10,6 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": "5.0.x",
         "orchestra/imagine": "~3.0"
     },
     "minimum-stability": "dev"
