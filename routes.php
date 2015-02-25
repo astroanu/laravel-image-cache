@@ -1,3 +1,3 @@
 <?php 
 
-Route::get('/images/{folder}/{file}-{width?}-{height?}.{ext?}', 'ImageCacheController@index');
+Route::get('/images/{folder}/{file}-{width?}-{height?}.{ext?}', '\Astroanu\ImageCache\ImageCacheController@index');
