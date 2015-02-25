@@ -23,7 +23,7 @@ trait GetImage {
         $file = pathinfo($this->image, PATHINFO_FILENAME );
 		$ext = pathinfo($this->image, PATHINFO_EXTENSION);
 
-		return '/' . Config::get('imagecache.defaults.imagepath') . '/' . $this->imagesdir . '/' 
+		return '/' . Config::get('imagecache.imagepath') . '/' . $this->imagesdir . '/' 
                 . $file . '-' . $width . '-' . $height . '.' . $ext;
     }
 }
