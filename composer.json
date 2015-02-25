@@ -9,8 +9,14 @@
             "email": "astroanu2004@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Astroanu\\ImageCache\\": "src/"
+        }
+    },
     "require": {
-        "orchestra/imagine": "~3.0"
+        "laravel/framework": "5.0.*",
+        "orchestra/imagine": "~3.0",
     },
     "minimum-stability": "dev"
 }
