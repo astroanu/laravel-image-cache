@@ -1,4 +1,4 @@
-<?php namespace Astroanu\ImageCache;
+<?php namespace Astroanu\ImageCache\Traits;
 
 trait GetImage {
 

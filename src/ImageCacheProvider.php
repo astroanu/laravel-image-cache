@@ -16,4 +16,18 @@ class ImageCacheProvider extends ServiceProvider {
 		);
 	}
 
+	    /**
+     * Bootstrap the application events.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+
+		$this->publishes([
+		    __DIR__ . '/config/imagecache.php' => config_path('imagecache.php')
+		], 'config');
+
+		include __DIR__.'/../../routes.php';
+    }
 }
