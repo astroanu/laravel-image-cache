@@ -5,13 +5,14 @@ use Illuminate\Support\Facades\Config;
 
 class Uploader {
 
-	public static function upload($file){
-		$fileName = md5(microtime() . '_image');
+	public static function upload($file, $fodler = 'content')
+	{
+		$fileName = md5(microtime() . '_imagecache');
 
 		$extention = $file->getClientOriginalExtension(); 
 		$fileName = $fileName . '.' . $extention;
 
-		$image = $file ->move(Config::get('assets.images.paths.input') . '/content', $fileName);
+		$image = $file ->move(Config::get('assets.paths.input') . '/'. $fodler, $fileName);
 
 		return $fileName;
 	}
