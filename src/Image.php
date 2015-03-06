@@ -17,7 +17,7 @@ class Image {
         $this->filename = $filename;
         
         if (!$this->imagine)  {
-            if (!$this->library and class_exists('Imagick') && Config::get('imagecache.imagedriver') == 'imagick') {
+            if (!$this->library and class_exists('Imagick') && Config::get('astroanu.imagecache.imagedriver') == 'imagick') {
                 $this->imagine = new \Imagine\Imagick\Imagine();
             } else {
                 $this->imagine = new \Imagine\Gd\Imagine();
@@ -28,8 +28,8 @@ class Image {
     public function resize($width, $height) 
     {
 
-        $outputDir = Config::get('imagecache.paths.output') . '/' . $this->folder;
-        $inputDir = Config::get('imagecache.paths.input') . '/' . $this->folder;
+        $outputDir = Config::get('astroanu.imagecache.paths.output') . '/' . $this->folder;
+        $inputDir = Config::get('astroanu.imagecache.paths.input') . '/' . $this->folder;
 
         $inputFile = $inputDir . '/' . $this->filename;
 
@@ -57,7 +57,7 @@ class Image {
 
         return $this->imagine->open($inputFile)
             ->thumbnail($size, $mode)
-            ->save($this->outputFile, array('quality' => Config::get('imagecache.defaults.jpgquality')))
+            ->save($this->outputFile, array('quality' => Config::get('astroanu.imagecache.defaults.jpgquality')))
             ->show('jpg');
 
     }

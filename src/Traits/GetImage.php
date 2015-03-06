@@ -6,8 +6,8 @@ trait GetImage {
 
     public function getImage() 
     {
-    	$width = Config::get('imagecache.defaults.thumbwidth');
-    	$height = Config::get('imagecache.defaults.thumbheight');
+    	$width = Config::get('astroanu.imagecache.defaults.thumbwidth');
+    	$height = Config::get('astroanu.imagecache.defaults.thumbheight');
 
     	if(func_num_args() == 1){
 
@@ -23,7 +23,7 @@ trait GetImage {
         $file = pathinfo($this->image, PATHINFO_FILENAME );
 		$ext = pathinfo($this->image, PATHINFO_EXTENSION);
 
-		return '/' . Config::get('imagecache.imagepath') . '/' . $this->imagesdir . '/' 
+		return '/' . Config::get('astroanu.imagecache.imagepath') . '/' . $this->imagesdir . '/' 
                 . $file . '-' . $width . '-' . $height . '.' . $ext;
     }
 }

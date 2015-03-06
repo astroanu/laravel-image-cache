@@ -16,7 +16,7 @@ class ImageCacheProvider extends ServiceProvider {
 		);
 	}
 
-	    /**
+	/**
      * Bootstrap the application events.
      *
      * @return void
@@ -25,7 +25,7 @@ class ImageCacheProvider extends ServiceProvider {
     {
 
 		$this->publishes([
-		    __DIR__ . '/../config/imagecache.php' => config_path('imagecache.php')
+		    __DIR__ . '/../config/imagecache.php' => config_path('astroanu/imagecache.php')
 		], 'config');
 
 		include __DIR__ . '/../routes.php';
