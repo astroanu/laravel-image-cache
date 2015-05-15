@@ -14,7 +14,7 @@ class ImageCacheController extends BaseController {
 			$filename .= '.' . $ext;
 		}
 
-		//try{
+		try{
 
 			$image = new Image($folder, $filename);
 
@@ -22,9 +22,9 @@ class ImageCacheController extends BaseController {
 			$response->header('Content-type', $image->getMimeType());
 			return $response;
 
-		//}
-		//catch(\Exception $e){
+		}
+		catch(\Exception $e){
 			App::abort(404);
-		//}
+		}
 	}
 }
