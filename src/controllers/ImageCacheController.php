@@ -19,7 +19,7 @@ class ImageCacheController extends BaseController {
 			$image = new Image($folder, $filename);
 
 			$response = Response::make($image->resize($width, $height), 200);
-			$response->header('Content-type', $image->getMimeType());
+			$response->header('Content-type', 'image/webp');
 			return $response;
 
 		}
