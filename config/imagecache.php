@@ -2,8 +2,8 @@
 
 return 	array(
 	'paths' => array(
-        'input' => '../storage/assets',
-        'output' => '../storage/imagecache'
+        'input' => Storage::disk('cache_input'),
+        'output' => Storage::disk('cache_output')
     ),
     'imagedriver' => 'imagick',
     'imagepath' => 'images',

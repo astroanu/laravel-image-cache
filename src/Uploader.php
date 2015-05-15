@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Config;
+use Storage;
 
 class Uploader {
 
@@ -12,7 +13,35 @@ class Uploader {
 		$extention = $file->getClientOriginalExtension(); 
 		$fileName = $fileName . '.' . $extention;
 
-		$destDir = Config::get('astroanu.imagecache.paths.input') . '/'. $imagesdir;
+		if (Config::get('astroanu.imagecache.usestorage')){
+			return self::uploadToStorage($fileName, $file, $imagesdir);
+		} else {
+			return self::uploadToLocal($fileName, $file, $imagesdir);
+		}
+	}
+
+	private static function uploadToStorage($fileName, $file, $imagesdir)
+	{
+		$inputDisk = Storage::disk(Config::get('astroanu.imagecache.paths.input'));
+
+		if (!$inputDisk->exists($imagesdir)) {
+            $inputDisk->makeDirectory($imagesdir);
+        }
+
+		$inputDisk->put($imagesdir . '/' . $fileName, File::get($file));
+
+		return $fileName;		
+	}
+
+	private static function uploadToLocal($fileName, $file, $imagesdir)
+	{
+		$inputDir = Config::get('astroanu.imagecache.paths.input');
+
+		if (!File::isDirectory($inputDir)) {
+            File::makeDirectory($inputDir);
+        }
+
+		$destDir = $inputDir . '/' . $imagesdir;
 
 		if (!File::isDirectory($destDir)) {
             File::makeDirectory($destDir);
@@ -20,6 +49,6 @@ class Uploader {
 
 		$image = $file->move($destDir, $fileName);
 
-		return $fileName;
+		return $fileName;		
 	}
 }
