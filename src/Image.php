@@ -62,6 +62,7 @@ class Image {
                 ->save($tmp, array('quality' => Config::get('astroanu.imagecache.defaults.jpgquality')));
 
             $outputDisk->put($this->outputFile, File::get($tmp));
+            unlink($tmp);
 
             return $this->imagine->load($outputDisk->get($this->outputFile))->show('jpg');
 
