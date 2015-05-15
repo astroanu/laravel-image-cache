@@ -36,9 +36,9 @@ Run ````artisan vendor:publish```` to copy the config file.
 
 ### Using Laravel FileSystem
 
-The image cache can be used with Laravel 5 file system enabling you to save your images right in to the cloud or the local file system based on your /config/filesystem.php configuration. laravel.com/docs/5.0/filesystem
+The image cache can be used with [Laravel 5 file system](http://laravel.com/docs/5.0/filesystem) enabling you to save your images right in to the cloud or the local file system based on your /config/filesystem.php configuration. 
 
-To set up Laravel file system tuen 'usestorage' => true on the config file.
+To set up Laravel file system turn 'usestorage' => true on the config file.
 Define the input and output disks on the config/filesystem.php
 
 
