@@ -1,10 +1,11 @@
 <?php
 
 return 	array(
-	'paths' => array(
-        'input' => Storage::disk('cache_input'),
-        'output' => Storage::disk('cache_output')
+    'paths' => array(
+        'input' => 'img_cache_input',
+        'output' => 'img_cache_output',
     ),
+    'usestorage' => true,
     'imagedriver' => 'imagick',
     'imagepath' => 'images',
     'defaults' => array(
