@@ -6,7 +6,7 @@ Add this to your composer and run ```composer update```
     
 or run
 
-    ```composer require astroanu/laravel-image-cache```
+    composer require astroanu/laravel-image-cache
 
 ### Registering the Laravel Provider
 Add this to ````config/app.php````
