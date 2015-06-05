@@ -141,7 +141,7 @@ getImage() supports the followign parameters:
     getImage(50) // returns a cropped and resized square image url
     getImage(50, 800) // returns a cropped and resized rectangular image url
     
-## getting image in to html
+## Inserting images in to html
 Since you know the image id and the folder you can insert the image easily in to html
     
     <img src="/images/<?php $folder; ?>/<?php imageid; ?>.jpg">
