@@ -144,9 +144,9 @@ getImage() supports the followign parameters:
 ## Inserting images in to html
 Since you know the image id and the folder you can insert the image easily in to html
     
-    <img src="/images/<?php $folder; ?>/<?php imageid; ?>.jpg">
-    <img src="/images/<?php $folder; ?>/<?php imageid; ?>-100.jpg">
-    <img src="/images/<?php $folder; ?>/<?php imageid; ?>-30-40.jpg">
+    <img src="/images/<?php echo $folder; ?>/<?php echo $imageid; ?>.jpg">
+    <img src="/images/<?php echo $folder; ?>/<?php echo $imageid; ?>-100.jpg">
+    <img src="/images/<?php echo $folder; ?>/<?php echo $imageid; ?>-30-40.jpg">
 
 ## Loading image object
 You can load an image as an instace and read it as blob
