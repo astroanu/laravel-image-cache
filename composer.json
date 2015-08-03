@@ -3,19 +3,17 @@
     "description": "Laravel image cache on Imagine",
     "keywords": ["laravel", "image", "cache", "Imagine"],
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Anuradha Jayathilaka",
-            "email": "astroanu2004@gmail.com"
-        }
-    ],
+    "authors": [{
+        "name": "Anuradha Jayathilaka",
+        "email": "astroanu2004@gmail.com"
+    }],
     "autoload": {
         "psr-4": {
             "Astroanu\\ImageCache\\": "src/"
         }
     },
     "require": {
-        "laravel/framework": "5.0.*",
+        "laravel/framework": ">=5.0.0",
         "orchestra/imagine": "~3.0"
     },
     "minimum-stability": "dev"
